@@ -8,6 +8,7 @@ few commands to setup or secure linux machine
 
 ### UFW
 
+`sudo apt-get install ufw` <br>
 `sudo ufw allow 22` <br>
 `sudo systemctl start ufw` <br>
 `sudo systemctl enable ufw` <br>
