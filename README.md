@@ -1,12 +1,12 @@
 # HowTo_Linux
 few commands to setup or secure linux machine
 
-### Update
+## Update
 
 `sudo apt-get update` </br>
 `sudo apt-get upgrade` </br>
 
-### UFW
+## UFW
 
 `sudo apt-get install ufw` <br>
 `sudo ufw allow 22` <br>
@@ -22,7 +22,7 @@ Zobraziť existujúce pravidlá <br>
 alebo <br>
 `sudo ufw status` <br>
 
-### Fail2Ban
+## Fail2Ban
 
 `sudo apt-get install fail2ban` </br>
 
@@ -46,7 +46,7 @@ unban ip </br>
 pridat ip do whitelistu </br>
 `etc/fail2ban/jail.local` </br>
 
-### nginx <br>
+## nginx <br>
 
 vytvorit novy subor servers.conf v umiestneni `/etc/nginx`, ktory sa da do include v sekcii http <br>
 
@@ -73,16 +73,16 @@ pridat usera do permission filu (uz netreba robit) <br>
 `sudo chgrp kalixtvps /etc/nginx/servers.conf` <br>
 `sudo chmod g+w /etc/nginx/servers.conf` <br>
 
-#### Certbot <br>
+## Certbot <br>
 Aktualizovať certifikáty  `sudo certbot renew` <br>
 Vymazať certifikát `sudo certbot delete` <br>
 
-#### Users <br>
+## Users <br>
 
 zoznam používateľov  `getent passwd` <br>
 vymazanie usera `sudo userdel username` <br>
 
-#### Speedtest <br>
+## Speedtest <br>
 
 `sudo apt install speedtest-cli` <br>
 `speedtest-cli` <br>
