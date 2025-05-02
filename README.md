@@ -3,5 +3,5 @@ few commands to setup or secure linux machine
 
 ### Update
 
-`sudo apt-get update`
-`sudo apt-get upgrade`
+`sudo apt-get update` </br>
+`sudo apt-get upgrade` </br>
