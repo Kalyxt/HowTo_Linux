@@ -58,7 +58,7 @@ pridat ip do whitelistu </br>
 
 `sudo mkdir -p /var/www/blazorapp` <br>
 `sudo nano /etc/nginx/sites-available/blazorapp` <br>
-`sudo chown -R www-data:www-data /var/www/blazorapp` <br>
+`sudo chown -R username:username /var/www/blazorapp` <br>
 
 ```
 server {
