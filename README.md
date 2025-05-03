@@ -83,6 +83,16 @@ remove default from available sites
 
 logs - `sudo tail -n 50 /var/log/nginx/error.log` <br>
 
+Na machine kde bezi reverse proxy -
+
+```
+location / {
+    proxy_pass http://192.168.1.154:80;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+}
+```
+
 vytvorit novy subor servers.conf v umiestneni `/etc/nginx`, ktory sa da do include v sekcii http <br>
 
 `touch servers.conf` <br>
@@ -110,6 +120,8 @@ pridat usera do permission filu (uz netreba robit) <br>
 
 ## Certbot <br>
 
+`sudo apt install certbot python3-certbot-nginx` <br>
+`sudo certbot --nginx` <br>
 
 Aktualizovať certifikáty  `sudo certbot renew` <br>
 Vymazať certifikát `sudo certbot delete` <br>
