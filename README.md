@@ -131,6 +131,34 @@ Vymazať certifikát `sudo certbot delete` <br>
 zoznam používateľov  `getent passwd` <br>
 vymazanie usera `sudo userdel username` <br>
 
+## Zaregistrovat API ako service <br>
+
+`sudo nano /etc/systemd/system/myapi.service` <br>
+
+```
+[Unit]
+Description=baneer online API
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/calibos
+ExecStart= /var/www/myapi/Calibos
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=calibos
+User=raspidev
+Environment=ASPNETCORE_URLS=http://0.0.0.0:5000
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`sudo systemctl daemon-reload` <br>
+`sudo systemctl enable myapi` <br>
+`sudo systemctl start myapi` <br>
+`sudo systemctl status myapi` <br>
+
 ## MariaDB <br>
 
 `sudo apt install mariadb-server` <br>
