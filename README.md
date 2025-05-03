@@ -138,6 +138,30 @@ vymazanie usera `sudo userdel username` <br>
 
 `sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf` <br>
 
+Pridať usera na remote access
+
+`sudo mariadb` <br>
+`SELECT host FROM mysql.user WHERE user = 'root';` <br>
+malo by vratit len localhost pre roota
+
+Vytvorenie usera
+
+```
+CREATE USER 'youruser'@'%' IDENTIFIED BY 'yourpassword';
+GRANT ALL PRIVILEGES ON *.* TO 'youruser'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
+User list a vymazanie
+
+`SELECT user, host FROM mysql.user;` <br>
+
+```
+DROP USER 'testuser'@'%';
+DROP USER 'root'@'192.168.1.10';
+DROP USER 'admin'@'localhost';
+```
+
 ## Speedtest <br>
 
 `sudo apt install speedtest-cli` <br>
