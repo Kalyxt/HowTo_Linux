@@ -1,5 +1,5 @@
 # HowTo_Linux
-few commands to setup or secure linux machine
+few commands to setup and secure linux machine
 
 ## Update
 
