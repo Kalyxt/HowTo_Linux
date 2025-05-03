@@ -109,6 +109,8 @@ pridat usera do permission filu (uz netreba robit) <br>
 `sudo chmod g+w /etc/nginx/servers.conf` <br>
 
 ## Certbot <br>
+
+
 Aktualizovať certifikáty  `sudo certbot renew` <br>
 Vymazať certifikát `sudo certbot delete` <br>
 
@@ -121,3 +123,8 @@ vymazanie usera `sudo userdel username` <br>
 
 `sudo apt install speedtest-cli` <br>
 `speedtest-cli` <br>
+
+## Temp <br>
+
+`sudo apt install lm-sensors` <br>
+`sensors` <br>
