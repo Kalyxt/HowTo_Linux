@@ -81,6 +81,8 @@ remove default from available sites
 `sudo nginx -t` <br>
 `sudo systemctl reload nginx` <br>
 
+logs - `sudo tail -n 50 /var/log/nginx/error.log` <br>
+
 vytvorit novy subor servers.conf v umiestneni `/etc/nginx`, ktory sa da do include v sekcii http <br>
 
 `touch servers.conf` <br>
