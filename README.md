@@ -60,6 +60,7 @@ pridat ip do whitelistu </br>
 `sudo nano /etc/nginx/sites-available/blazorapp` <br>
 `sudo chown -R www-data:www-data /var/www/blazorapp` <br>
 
+```
 server {
     listen 80;
     server_name _;  # or use the Pi's IP if local
@@ -71,6 +72,7 @@ server {
         try_files $uri $uri/ /index.html;
     }
 }
+```
 
 `sudo ln -s /etc/nginx/sites-available/blazorapp /etc/nginx/sites-enabled/` <br>
 
