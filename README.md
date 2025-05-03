@@ -131,6 +131,10 @@ Vymazať certifikát `sudo certbot delete` <br>
 zoznam používateľov  `getent passwd` <br>
 vymazanie usera `sudo userdel username` <br>
 
+## MariaDB <br>
+
+`sudo apt install mariadb-server` <br>
+
 ## Speedtest <br>
 
 `sudo apt install speedtest-cli` <br>
