@@ -37,6 +37,12 @@ any changes, it’s best to do it in a separate file, fail2ban.local, which over
 test ci sa da spustit </br>
 `sudo fail2ban-client -x start` </br>
 
+Ak nevie najst log subor.
+[sshd]
+enabled = true
+port    = ssh
+backend = systemd
+
 zobrazí zabanovane ip adresy </br>
 `sudo fail2ban-client status sshd` </br>
 
