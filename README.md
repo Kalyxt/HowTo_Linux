@@ -142,7 +142,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/var/www/calibos
-ExecStart=/var/www/Calibos
+ExecStart=/var/www/calibos/Calibos
 Restart=always
 RestartSec=10
 KillSignal=SIGINT
