@@ -136,6 +136,8 @@ vymazanie usera `sudo userdel username` <br>
 `sudo apt install mariadb-server` <br>
 `sudo mariadb-secure-installation` <br>
 
+`sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf` <br>
+
 ## Speedtest <br>
 
 `sudo apt install speedtest-cli` <br>
