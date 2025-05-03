@@ -134,6 +134,7 @@ vymazanie usera `sudo userdel username` <br>
 ## MariaDB <br>
 
 `sudo apt install mariadb-server` <br>
+`sudo mariadb-secure-installation` <br>
 
 ## Speedtest <br>
 
