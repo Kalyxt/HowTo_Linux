@@ -54,6 +54,31 @@ pridat ip do whitelistu </br>
 
 ## nginx <br>
 
+## WASM hosting <br>
+
+`sudo mkdir -p /var/www/blazorapp` <br>
+`sudo nano /etc/nginx/sites-available/blazorapp` <br>
+`sudo chown -R www-data:www-data /var/www/blazorapp` <br>
+
+server {
+    listen 80;
+    server_name _;  # or use the Pi's IP if local
+
+    root /var/www/blazorapp/wwwroot;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+`sudo ln -s /etc/nginx/sites-available/blazorapp /etc/nginx/sites-enabled/` <br>
+
+remove default from available sites
+
+`sudo nginx -t` <br>
+`sudo systemctl reload nginx` <br>
+
 vytvorit novy subor servers.conf v umiestneni `/etc/nginx`, ktory sa da do include v sekcii http <br>
 
 `touch servers.conf` <br>
