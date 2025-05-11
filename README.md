@@ -204,3 +204,10 @@ DROP USER 'admin'@'localhost';
 
 `sudo apt install lm-sensors` <br>
 `sensors` <br>
+
+## Debian PATH fix <br>
+
+```
+echo 'export PATH=$PATH:/usr/sbin' >> ~/.bashrc
+source ~/.bashrc
+```
