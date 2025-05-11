@@ -189,6 +189,11 @@ DROP USER 'testuser'@'%';
 DROP USER 'root'@'192.168.1.10';
 DROP USER 'admin'@'localhost';
 ```
+## Network <br>
+
+`sudo nano /etc/network/interfaces` <br>
+
+`sudo systemctl restart networking` <br>
 
 ## Speedtest <br>
 
