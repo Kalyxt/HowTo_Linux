@@ -164,6 +164,7 @@ WantedBy=multi-user.target
 `sudo apt install mariadb-server` <br>
 `sudo mariadb-secure-installation` <br>
 
+Treba zmenit IP na lokalnu IP tohto PC <br>
 `sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf` <br>
 
  Start MariaDB
