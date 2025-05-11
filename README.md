@@ -219,3 +219,9 @@ DROP USER 'admin'@'localhost';
 echo 'export PATH=$PATH:/usr/sbin' >> ~/.bashrc
 source ~/.bashrc
 ```
+## sudo <br>
+
+Add pecpc to sudo group <br>
+`usermod -aG sudo pecpc` <br>
+Verify group membership <br>
+`groups pecpc` <br>
