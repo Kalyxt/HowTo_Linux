@@ -197,6 +197,12 @@ DROP USER 'testuser'@'%';
 DROP USER 'root'@'192.168.1.10';
 DROP USER 'admin'@'localhost';
 ```
+
+## Users permissions <br>
+
+`sudo chmod u+rwx,g+rx,o+rx /var/www/apifolder -R` <br>
+
+
 ## Network <br>
 
 `sudo nano /etc/network/interfaces` <br>
@@ -220,6 +226,8 @@ echo 'export PATH=$PATH:/usr/sbin' >> ~/.bashrc
 source ~/.bashrc
 ```
 ## sudo <br>
+
+`apt install sudo` <br>
 
 Add pecpc to sudo group <br>
 `usermod -aG sudo pecpc` <br>
