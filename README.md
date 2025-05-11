@@ -166,6 +166,13 @@ WantedBy=multi-user.target
 
 `sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf` <br>
 
+ Start MariaDB
+`sudo systemctl start mariadb` <br>
+ Enable MariaDB to start on boot
+`sudo systemctl enable mariadb` <br>
+ Check status
+`sudo systemctl status mariadb` <br>
+
 Pridať usera na remote access
 
 `sudo mariadb` <br>
