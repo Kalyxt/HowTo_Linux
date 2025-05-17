@@ -159,6 +159,10 @@ WantedBy=multi-user.target
 `sudo systemctl start myapi` <br>
 `sudo systemctl status myapi` <br>
 
+remove <br>
+`sudo systemctl disable myapi` <br>
+`sudo systemctl stop myapi` <br>
+
 ## MariaDB <br>
 
 `sudo apt install mariadb-server` <br>
