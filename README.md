@@ -233,3 +233,14 @@ Add pecpc to sudo group <br>
 `usermod -aG sudo pecpc` <br>
 Verify group membership <br>
 `groups pecpc` <br>
+
+## Backup <br>
+
+Info <br>
+`lsblk` <br>
+`df -h` <br>
+
+raspi backup SD card to SD card <br>
+`sudo dd if=/dev/mmcblk0 of=/dev/sda bs=4M status=progress` <br>
+
+
