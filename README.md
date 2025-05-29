@@ -52,6 +52,27 @@ unban ip </br>
 pridat ip do whitelistu </br>
 `etc/fail2ban/jail.local` </br>
 
+debian rsyslog
+
+```
+sudo apt install rsyslog
+sudo systemctl start rsyslog
+sudo systemctl enable rsyslog
+sudo systemctl status rsyslog
+```
+
+debian jail.local
+
+```
+[sshd]
+port    = 22
+logpath = /var/log/auth.log
+backend = auto
+enabled = true
+maxretry = 3
+bantime = 3000m
+```
+
 ## nginx <br>
 
 ## WASM hosting <br>
