@@ -52,7 +52,7 @@ unban ip </br>
 pridat ip do whitelistu </br>
 `etc/fail2ban/jail.local` </br>
 
-debian rsyslog
+debian rsyslog </br>
 
 ```
 sudo apt install rsyslog
@@ -61,7 +61,7 @@ sudo systemctl enable rsyslog
 sudo systemctl status rsyslog
 ```
 
-debian jail.local
+debian jail.local </br>
 
 ```
 [sshd]
@@ -138,6 +138,10 @@ zisti k akej skupine patri subor <br>
 pridat usera do permission filu (uz netreba robit) <br>
 `sudo chgrp kalixtvps /etc/nginx/servers.conf` <br>
 `sudo chmod g+w /etc/nginx/servers.conf` <br>
+
+## Wordpress hosting <br>
+
+`sudo apt install nginx php-fpm php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip` <br>
 
 ## Certbot <br>
 
