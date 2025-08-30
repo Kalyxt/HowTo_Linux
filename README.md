@@ -143,6 +143,84 @@ pridat usera do permission filu (uz netreba robit) <br>
 
 `sudo apt install nginx php-fpm php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip` <br>
 
+`sudo apt install php-fpm php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y` <br>
+
+`sudo systemctl start php8.2-fpm` <br>
+`sudo systemctl enable php8.2-fpm` <br>
+
+```
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+tar -xvzf latest.tar.gz
+sudo mv wordpress /var/www/wordpress
+```
+
+`sudo chown -R www-data:www-data /var/www/wordpress` <br>
+`sudo chmod -R 755 /var/www/wordpress` <br>
+
+`sudo cp /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php` <br>
+`sudo nano /var/www/wordpress/wp-config.php` <br>
+
+```
+define('DB_NAME', 'wordpress');
+define('DB_USER', 'wordpress_user');
+define('DB_PASSWORD', 'your_secure_password');
+define('DB_HOST', 'localhost');
+https://api.wordpress.org/secret-key/1.1/salt/
+```
+
+`sudo nano /etc/nginx/sites-available/wordpress` <br>
+
+```
+server {
+    listen 80;
+    server_name your_domain www.your_domain;
+
+    root /var/www/wordpress;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock; # Adjust version if needed
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location = /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
+
+    location = /robots.txt {
+        allow all;
+        log_not_found off;
+        access_log off;
+    }
+
+    location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
+        expires max;
+        log_not_found off;
+    }
+}
+```
+
+`sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/` <br>
+`sudo nginx -t` <br>
+`sudo systemctl reload nginx` <br>
+
+`sudo apt install certbot python3-certbot-nginx -y` <br>
+`sudo certbot --nginx -d your_domain -d www.your_domain` <br>
+
+`sudo find /var/www/wordpress -type d -exec chmod 750 {} \;` <br>
+`sudo find /var/www/wordpress -type f -exec chmod 640 {} \;` <br>
+
 ## Certbot <br>
 
 `sudo apt install certbot python3-certbot-nginx` <br>
