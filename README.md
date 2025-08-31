@@ -341,6 +341,12 @@ Add pecpc to sudo group <br>
 Verify group membership <br>
 `groups pecpc` <br>
 
+## systemctl <br>
+
+`sudo systemctl list-units --type=service` <br>
+`sudo systemctl stop name.service` <br>
+`sudo systemctl disable name.service` <br>
+
 ## Backup <br>
 
 Info <br>
