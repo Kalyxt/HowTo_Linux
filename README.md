@@ -356,4 +356,10 @@ Info <br>
 raspi backup SD card to SD card <br>
 `sudo dd if=/dev/mmcblk0 of=/dev/sda bs=4M status=progress` <br>
 
+## Micro <br>
+
+ked otvoris mc, napis select-editor a mozes ho zmenit na micro z nano
+sudo apt-get install micro
+sudo update-alternatives --config editor takto sa meni editor system wide, nie len v mc, ale nemusi to respektovat mc podla nastavenia
+
 
