@@ -368,6 +368,18 @@ sudo systemctl restart fail2ban
 sudo fail2ban-client status mariadb-auth
 ```
 
+zoznam ip ktore su momentalne zabanovane <br>
+
+```
+sudo fail2ban-client get mariadb-auth banip
+```
+
+ako odbanovat ip <br>
+
+```
+sudo fail2ban-client set mariadb-auth unbanip 178.143.191.171
+```
+
 ## Users permissions <br>
 
 `sudo chmod u+rwx,g+rx,o+rx /var/www/apifolder -R` <br>
