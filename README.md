@@ -318,6 +318,56 @@ CREATE USER 'root'@'46.151.60.216' IDENTIFIED BY 'STRONG_PASSWORD_HERE';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'46.151.60.216' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
+
+Nastavenie error logov pre fail2ban pre kontrolu pokusov o login
+
+`sudo nano /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf` - zakomentuj skip_log_error <br>
+
+odkomentuj <br>
+
+```
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+[mysqld]
+log_error = /var/log/mysql/error.log
+```
+
+nastavenie suboru pre zapis <br>
+```
+sudo mkdir -p /var/log/mysql
+sudo touch /var/log/mysql/error.log
+sudo chown -R mysql:mysql /var/log/mysql
+sudo chmod 640 /var/log/mysql/error.log
+```
+
+```
+sudo systemctl restart mariadb
+```
+
+overenie ci to daco zapisuje <br>
+
+```
+sudo tail -n 50 /var/log/mysql/error.log
+```
+
+nastavenie jailu pre mariadb <br>
+```
+sudo nano /etc/fail2ban/jail.d/mariadb.local
+
+[mariadb-auth]
+enabled = true
+port = 3306
+filter = mysqld-auth
+logpath = /var/log/mysql/error.log
+maxretry = 5
+findtime = 10m
+bantime  = 1h
+action = nftables-multiport[name=mariadb, port="3306", protocol=tcp]
+
+sudo systemctl restart fail2ban
+
+sudo fail2ban-client status mariadb-auth
+```
+
 ## Users permissions <br>
 
 `sudo chmod u+rwx,g+rx,o+rx /var/www/apifolder -R` <br>
