@@ -279,6 +279,8 @@ remove <br>
 Treba zmenit IP na lokalnu IP tohto PC <br>
 `sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf` <br>
 
+`sudo ufw allow 3306/tcp` <br>
+
  Start MariaDB
 `sudo systemctl start mariadb` <br>
  Enable MariaDB to start on boot
