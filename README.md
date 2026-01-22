@@ -310,6 +310,12 @@ DROP USER 'root'@'192.168.1.10';
 DROP USER 'admin'@'localhost';
 ```
 
+Povolenie root remote login len pre vybranu IP <br>
+```
+CREATE USER 'root'@'46.151.60.216' IDENTIFIED BY 'STRONG_PASSWORD_HERE';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'46.151.60.216' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
 ## Users permissions <br>
 
 `sudo chmod u+rwx,g+rx,o+rx /var/www/apifolder -R` <br>
