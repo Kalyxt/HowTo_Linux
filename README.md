@@ -10,7 +10,11 @@ few commands to setup and secure linux machine
 
 `sudo apt-get install ufw` <br>
 `sudo ufw allow 22` <br>
-allow to use port only from entered IP - `sudo ufw allow from 203.0.113.10 to any port 22 proto tcp` <br>
+
+allow to use port only from entered IP
+`sudo ufw allow from 46.151.60.216 to any port 22 proto tcp` <br>
+`sudo ufw allow from 178.143.191.171 to any port 22 proto tcp` <br>
+
 `sudo systemctl start ufw` <br>
 `sudo systemctl enable ufw` <br>
 `sudo ufw enable` <br>
