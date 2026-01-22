@@ -380,6 +380,15 @@ ako odbanovat ip <br>
 sudo fail2ban-client set mariadb-auth unbanip 178.143.191.171
 ```
 
+ako sa vytvori user, ktory ma pristup z internetu a prava len na jednu DB <br>
+
+```
+CREATE USER IF NOT EXISTS 'kalixt'@'%' IDENTIFIED BY 'password';
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, DROP
+ON kalixtdb.* TO 'kalixt'@'%';
+```
+
 ## Users permissions <br>
 
 `sudo chmod u+rwx,g+rx,o+rx /var/www/apifolder -R` <br>
