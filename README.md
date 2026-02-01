@@ -449,13 +449,15 @@ sudo update-alternatives --config editor takto sa meni editor system wide, nie l
 ## DBevier on ubuntu <br>
 
 # Add DBeaver signing key <br>
-sudo wget -O /usr/share/keyrings/dbeaver.gpg.key https://dbeaver.io/debs/dbeaver.gpg.key <br>
+`curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/dbeaver.gpg
+sudo chmod 644 /usr/share/keyrings/dbeaver.gpg` <br>
 
 # Add repo <br>
-echo "deb [signed-by=/usr/share/keyrings/dbeaver.gpg.key] https://dbeaver.io/debs/dbeaver-ce /" \
- | sudo tee /etc/apt/sources.list.d/dbeaver.list <br>
+
+`echo "deb [signed-by=/usr/share/keyrings/dbeaver.gpg] https://dbeaver.io/debs/dbeaver-ce /" \
+ | sudo tee /etc/apt/sources.list.d/dbeaver.list > /dev/null` <br>   
 
 # Install <br>
-sudo apt-get update <br>
-sudo apt-get install dbeaver-ce <br>
+`sudo apt-get update` <br>
+`sudo apt-get install dbeaver-ce` <br>
 
