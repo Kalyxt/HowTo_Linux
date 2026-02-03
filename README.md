@@ -189,6 +189,35 @@ remove <br>
 `sudo systemctl disable myapi` <br>
 `sudo systemctl stop myapi` <br>
 
+nginx
+
+/etc/nginx/api
+
+```
+server {
+    server_name ferko.exalogic.sk;
+
+    location / {
+        proxy_pass http://127.0.0.1:7001;
+        proxy_http_version 1.1;
+
+       # Preserve original host + client info
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Timeouts (increase for long requests)
+        proxy_connect_timeout 10s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+
+        # If streaming responses, disabling buffering can help:
+        # proxy_buffering off;
+    }
+}
+```
+
 ## MariaDB <br>
 
 `sudo apt install mariadb-server` <br>
