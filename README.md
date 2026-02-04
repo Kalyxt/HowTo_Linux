@@ -347,7 +347,7 @@ ON kalixtdb.* TO 'kalixt'@'%';
 ## Users permissions <br>
 
 `sudo chmod u+rwx,g+rx,o+rx /var/www/apifolder -R` <br>
-
+`sudo chown -R username:username /var/www/uploads` <br>
 
 ## Network <br>
 
