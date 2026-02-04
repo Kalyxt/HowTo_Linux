@@ -266,6 +266,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'46.151.60.216' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
+Povolenie root remote login pre LAN <br>
+```
+CREATE USER 'root'@'192.168.%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
 Nastavenie error logov pre fail2ban pre kontrolu pokusov o login
 
 `sudo nano /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf` - zakomentuj skip_log_error <br>
