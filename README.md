@@ -24,6 +24,7 @@ allow to use port only from entered IP <br>
 
 Zobraziť existujúce pravidlá <br>
 `sudo nano /etc/ufw/user.rules` <br>
+`sudo ufw status numbered` <br>
 alebo <br>
 `sudo ufw status` <br>
 
