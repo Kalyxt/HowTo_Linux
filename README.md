@@ -391,29 +391,9 @@ Verify group membership <br>
 
 Info <br>
 `lsblk` <br>
-`df -h` <br>
+
+change /dev/{external drive} <br>
 
 raspi backup SD card to SD card <br>
 `sudo dd if=/dev/mmcblk0 of=/dev/sda bs=4M status=progress` <br>
-
-## Micro <br>
-
-ked otvoris mc, napis select-editor a mozes ho zmenit na micro z nano
-sudo apt-get install micro
-sudo update-alternatives --config editor takto sa meni editor system wide, nie len v mc, ale nemusi to respektovat mc podla nastavenia
-
-## DBevier on ubuntu <br>
-
-Add DBeaver signing key <br>
-`curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/dbeaver.gpg
-sudo chmod 644 /usr/share/keyrings/dbeaver.gpg` <br>
-
-Add repo <br>
-
-`echo "deb [signed-by=/usr/share/keyrings/dbeaver.gpg] https://dbeaver.io/debs/dbeaver-ce /" \
- | sudo tee /etc/apt/sources.list.d/dbeaver.list > /dev/null` <br>   
-
-Install <br>
-`sudo apt-get update` <br>
-`sudo apt-get install dbeaver-ce` <br>
 
