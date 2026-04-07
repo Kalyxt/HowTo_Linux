@@ -352,6 +352,10 @@ ON kalixtdb.* TO 'kalixt'@'%';
 
 ## Network <br>
 
+`ip link` <br>
+
+`sudo nano /etc/netplan` <br>
+
 `sudo nano /etc/network/interfaces` <br>
 
 `sudo systemctl restart networking` <br>
