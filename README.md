@@ -239,7 +239,7 @@ Treba zmenit IP na lokalnu IP tohto PC <br>
 
 Pridať usera na remote access
 
-`sudo mariadb` <br>
+`sudo mariadb` alebo `mariadb -u root -p` <br>
 `SELECT host FROM mysql.user WHERE user = 'root';` <br>
 malo by vratit len localhost pre roota
 
