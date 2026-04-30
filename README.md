@@ -16,6 +16,10 @@ allow to use port only from entered IP <br>
 `sudo ufw allow from 178.143.191.171 to any port 22 proto tcp` <br>
 `sudo ufw allow from 192.168.1.0/24 to any port 7001 proto tcp` <br>
 
+mariadb ufw rules <br>
+`sudo ufw allow from 192.168.1.0/24 to any port 3306 proto tcp` <br>
+`sudo ufw allow from 46.151.60.216 to any port 3306 proto tcp` <br>
+
 `sudo systemctl start ufw` <br>
 `sudo systemctl enable ufw` <br>
 `sudo ufw enable` <br>
